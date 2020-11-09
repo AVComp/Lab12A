@@ -1,0 +1,61 @@
+class Lab12A {
+  static class LightBulb(){
+    private int wattage;
+    private int wattHours;
+    private boolean on = false;
+    private String name = "";
+
+    LightBulb() //defualt constructor
+    {
+      wattage = 40;
+      name = "0";
+    }
+
+    LightBulb(String n, int w) //second construcor
+    {
+      wattage = w;
+      name = n;
+    }
+
+    public void switchOn()
+    {
+      on = true;
+    }
+
+    public void printBulb()
+    {
+      if(on == true)
+      {
+        System.out.println("Bulb "+name+" is on and has used"+wattHours+" watt-hours.");
+      }
+      else{
+        System.out.println("Bulb "+name+" is off and has used"+wattHours+" watt-hours.");
+      }
+    }
+
+    public void incrementTime(int hours)
+    {
+      if(on == true)
+      {
+        wattHours = hours * wattage;
+      }
+    }
+
+  }
+
+  public static void main(String[] args) {
+    LightBulb b1 = new LightBulb();
+    LightBulb b2 = new LightBulb("1", 100);
+
+    b1.printOn();
+    b2.printOn();
+    
+    b2.switchOn();
+
+    b1.incrementTime(5);
+    b2.incrementTime(5);
+
+    b1.printBulb();
+    b2.printBulb();
+  }
+}
